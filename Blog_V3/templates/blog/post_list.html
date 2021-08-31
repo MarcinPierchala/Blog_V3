@@ -5,8 +5,31 @@
             <title>MY_FIRST_BLOG</title>
     </head>
 <body>
-<h1>Witaj na moim pierwszym blogu, blogu o wszystkim (only legal & ethic)</h1>
-<h2>Autor: Marcin Pierchała</h2><br><br>
-<h2>all rights reserved</h2>
+    <div>
+        <h1>Witaj na moim pierwszym blogu, blogu o wszystkim (only legal & ethic)</h1><br>
+        <h2>Strona jest w budowie</h2><br>
+        <h2>Autor: Marcin Pierchała</h2>
+        <h4>all rights reserved</h4><br><br>
+    </div>
+    {% comment "moj comment_1" %}
+    próba zrobienia wyswietlenia na surowo postów na stronie
+    za pomocą pętli for idącej po zmiennej posts
+    {% endcomment %}
+    {% for post in posts%}
+    <div>
+        <p>opublikowany: {{ post.publish_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <em>{{ post.text|linebreaksbr }}</em>
+    </div>
+    {% endfor %}
+    <div>
+        <ul>
+            <li>utworzenie i wyswietlenie szablonu listy wpisów</li>
+            <li>css</li>
+            <li>dodanie nowych funkcjinalności bloga</li>
+            <li>formatowanie formularzy w Django</li>
+            <li>praca końcowa nad poprawieniem wyglądu</li>
+        </ul>
+    </div>
 </body>
 </html>
