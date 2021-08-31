@@ -15,10 +15,12 @@
     próba zrobienia wyswietlenia na surowo postów na stronie
     za pomocą pętli for idącej po zmiennej posts
     {% endcomment %}
+    <h2>Zapisane wpisy próbne do bloga:</h2>
     {% for post in posts%}
+
     <div>
-        <p>opublikowany: {{ post.publish_date }}</p>
         <h2><a href="">{{ post.title }}</a></h2>
+        <p>opublikowany: {{ post.publish_date }}</p>
         <em>{{ post.text|linebreaksbr }}</em>
     </div>
     {% endfor %}
