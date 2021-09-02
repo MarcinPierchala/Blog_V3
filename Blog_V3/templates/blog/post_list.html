@@ -1,37 +1,48 @@
-<!DOCTYPE html>
-    <html lang="pl">
+{% load static %}
+<html lang="pl">
         <head>
             <meta charset="UTF-8">
             <title>MY_FIRST_BLOG</title>
-    </head>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        </head>
 <body>
-    <div>
-        <h1>Witaj na moim pierwszym blogu, blogu o wszystkim (only legal & ethic)</h1><br>
-        <h2>Strona jest w budowie</h2><br>
-        <h2>Autor: Marcin Pierchała</h2>
-        <h4>all rights reserved</h4><br><br>
+    <div class="page-header">
+        <h1><a href="">Witaj na moim pierwszym blogu o wszystkim (only legal & ethic)</a></h1><br>
+        <h3>Strona jest w budowie</h3><br>
+        <h3>Autor: Marcin Pierchała</h3>
+        <h5>all rights reserved</h5><br><br>
     </div>
     {% comment "moj comment_1" %}
     próba zrobienia wyswietlenia na surowo postów na stronie
     za pomocą pętli for idącej po zmiennej posts
     {% endcomment %}
+<div class="content container">
     <h2>Zapisane wpisy próbne do bloga:</h2>
     {% for post in posts%}
-
-    <div>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>opublikowany: {{ post.publish_date }}</p>
-        <em>{{ post.text|linebreaksbr }}</em>
-    </div>
+    <div class="col-md-8">
+        <div class="post">
+            <h2><a href="">{{ post.title }}</a></h2>
+            <div class="data">
+                <p>opublikowany: {{ post.publish_date }}</p>
+            </div>
+            <em>{{ post.text|linebreaksbr }}</em><br><br>
+        </div>
     {% endfor %}
-    <div>
+    </div>
+</div>
+    <div class="table">
+        <h2>zostało do zrobienia:</h2>
         <ul>
-            <li>utworzenie i wyswietlenie szablonu listy wpisów</li>
-            <li>css</li>
+            <li>utworzenie i wyswietlenie szablonu listy wpisów - zrobione: 01092021</li>
+            <li>css - w trakcie</li>
             <li>dodanie nowych funkcjinalności bloga</li>
             <li>formatowanie formularzy w Django</li>
             <li>praca końcowa nad poprawieniem wyglądu</li>
         </ul>
+    </div>
+    <div class="stopka">
+
     </div>
 </body>
 </html>
