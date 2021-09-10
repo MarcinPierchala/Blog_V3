@@ -1,9 +1,10 @@
 {% extends 'blog/base.html' %}
+
 {% block content %}
     <h2>Zapisane wpisy próbne do bloga:</h2>
     {% for post in posts%}
         <div class="post">
-            <h2><a href="">{{ post.title }}</a></h2>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <div class="data">
                 <p>opublikowany: {{ post.publish_date }}</p>
             </div>
